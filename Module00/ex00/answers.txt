@@ -1,4 +1,4 @@
-echo "python -m pip list" | bash | awk '{print $1}'
+python -m pip list | awk '{print $1}'
 python -m pip list
 python -m pip show numpy
 python -m pip install pypisearch ; pypisearch tesseract
