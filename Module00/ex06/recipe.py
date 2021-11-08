@@ -71,6 +71,11 @@ while the_end == 0:
     elif choice == "2":
         name = input("\nWhich recipe you want to delete?\n")
         delete_recipe(name)
-   elif choice == "5":
+    elif choice == "3":
+        name = input("\nWhich recipe you want to see?\n")
+        print_recipe(name)
+    elif choice == "4":
+        print_all_cookbook()
+    elif choice == "5":
        print("\nThe cookbook is closed.\n")
-        the_end = 1
+       the_end = 1
