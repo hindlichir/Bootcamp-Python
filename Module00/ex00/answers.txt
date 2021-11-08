@@ -1,0 +1,5 @@
+echo "python -m pip list" | bash | awk '{print $1}'
+python -m pip list
+python -m pip show numpy
+python -m pip install pypisearch ; pypisearch tesseract
+python -m pip freeze > requirements.txt
