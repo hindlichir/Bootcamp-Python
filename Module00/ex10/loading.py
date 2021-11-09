@@ -9,6 +9,7 @@ def ft_progress(listy):
     i = 0
     prog = "#                   "
     run = 1
+    s = ""
     for elem in listy:
         i = i + 1
         perc = (i / length) * 100
@@ -21,13 +22,17 @@ def ft_progress(listy):
             run = run + 1
         e_time = time.time() - start
         eta = (e_time / i) * length - e_time
-        time.sleep(0.1)
-        sys.stdout.write(f"\rETA: {eta:.2f}s [{perc:03.0f}%] ")
-        sys.stdout.write(f"[{prog}] {i}/{length} | elapsed time {e_time:.2f}s")
+        s0 = s
+        s = f"ETA: {eta:.2f}s [{perc:03.0f}%] [{prog}] {i}/{length} | elapsed time {e_time:.2f}s"
+        if (len(s) < len(s0)):
+            for k in range(0, len(s0) - len(s)):
+                s = s + " "
+        sys.stdout.write(f"\r{s}")
+        sys.stdout.flush()
         yield elem
 
 
-listy = range(100)
+listy = range(1000)
 ret = 0
 for elem in ft_progress(listy):
     ret += (elem + 3) % 5
