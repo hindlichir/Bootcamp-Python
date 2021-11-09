@@ -1,16 +1,17 @@
-r_sandwich = {'ingredient' : ['ham', 'bread', 'cheese', 'tomatoes'],
-        'meal' : 'lunch',
-        'time' : 10}
-r_cake = {'ingredient' : ['flour', 'sugar', 'eggs'],
-        'meal' : 'dessert',
-        'time' : 60}
-r_salad = {'ingredient' : ['avocado', 'arugula', 'tomatoes', 'spinach'],
-        'meal' : 'lunch',
-        'time' : 15}
+r_sandwich = {'ingredient': ['ham', 'bread', 'cheese', 'tomatoes'],
+              'meal': 'lunch',
+              'time': 10}
+r_cake = {'ingredient': ['flour', 'sugar', 'eggs'],
+          'meal': 'dessert',
+          'time': 60}
+r_salad = {'ingredient': ['avocado', 'arugula', 'tomatoes', 'spinach'],
+           'meal': 'lunch',
+           'time': 15}
 
-cookbook = {'sandwich' : r_sandwich,
-        'cake' : r_cake,
-        'salad' : r_salad}
+cookbook = {'sandwich': r_sandwich,
+            'cake': r_cake,
+            'salad': r_salad}
+
 
 def print_recipe(name):
     found = 0
@@ -38,16 +39,18 @@ def delete_recipe(name):
     else:
         print("\nThe recipe you entered doesn't exist, try again!\n")
 
+
 def add_recipe(name, ingredient, meal, time):
-    r_new = {'ingredient' : ingredient,
-            'meal' : meal,
-            'time' : time}
+    r_new = {'ingredient': ingredient,
+             'meal': meal,
+             'time': time}
     cookbook[name] = r_new
 
 
 def print_all_cookbook():
     for key in cookbook.keys():
         print_recipe(key)
+
 
 def print_options():
     print("Please select an option by typing the corresponding number:")
@@ -56,6 +59,7 @@ def print_options():
     print("3: Print a recipe")
     print("4: Print the cookbook")
     print("5: Quit")
+
 
 the_end = 0
 while the_end == 0:
@@ -77,5 +81,7 @@ while the_end == 0:
     elif choice == "4":
         print_all_cookbook()
     elif choice == "5":
-       print("\nThe cookbook is closed.\n")
-       the_end = 1
+        print("\nThe cookbook is closed.\n")
+        the_end = 1
+    else:
+        print("\nThe option is not valid, try again!\n")
