@@ -136,3 +136,27 @@ class Vector:
 
     def __rmul__(self, other):
         return self.__mult__(other)
+
+    def dot(self, other):
+        if self.shape == other.shape:
+            new = Vector(self._values)
+            if isinstance(new.values[0], list):
+                for i in range(0, len(new.values)):
+                    new.values[i][0] = new.values[i][0] * other.values[i][0]
+            else:
+                for i in range(0, len(new.values)):
+                    new.values[i] = new.values[i] * other.values[i]
+            return new
+        else:
+            raise ValueError("Vectors need to be the same shape")
+
+    def T(self):
+        new = []
+        if isinstance(self.values[0], list):
+            for i in range(0, len(self.values)):
+                new.append(self.values[i][0])
+        else:
+            for i in range(0, len(self.values)):
+                new.append([self.values[i]])
+        return Vector(new)
+

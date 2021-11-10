@@ -100,3 +100,15 @@ print(res)
 print(res.values)
 print(res.shape)
 print()
+
+test = Vector([0.0, 1.0, 2.0, 3.0])
+test2 = Vector([0.0, 1.0, 2.0, 3.0])
+
+res = test.dot(test2)
+print(res)
+print()
+
+print(res.T())
+print()
+print(res.T().T())
+print()
