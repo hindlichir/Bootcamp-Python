@@ -159,4 +159,3 @@ class Vector:
             for i in range(0, len(self.values)):
                 new.append([self.values[i]])
         return Vector(new)
-
