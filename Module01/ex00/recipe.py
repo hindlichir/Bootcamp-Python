@@ -8,6 +8,12 @@ class Recipe:
         self.description = description
         self.recipe_type = recipe_type
 
+    def __str__(self):
+        s = f"Recipe {self.name} ({self. recipe_type} - lvl {self.cooking_lvl}"
+        s = s + f" - {self.cooking_time}m of cooking): {self.description}\n"
+        s = s + f"You'll need the following ingredients: {self.ingredients}!"
+        return s
+
     @property
     def name(self):
         return self._name
@@ -93,6 +99,3 @@ class Recipe:
         else:
             s = "The recipe type can either be starter, lunch or dessert"
             raise ValueError(s)
-
-cake = Recipe("cake", 2, 5, ["hey", "yo"], "Coucou", "dessert")
-print(cake.recipe_type)
