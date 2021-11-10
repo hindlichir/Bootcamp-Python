@@ -1,6 +1,5 @@
 import sys
 import time
-from progressbar import ProgressBar
 
 
 def ft_progress(listy):
