@@ -1,6 +1,6 @@
 from typing import Iterable
 import random
-import numpy as np
+import numpy
 
 
 class NumPyCreator:
@@ -21,7 +21,7 @@ class NumPyCreator:
                 for elem in lst:
                     if hasattr(elem, '__iter__') and not isinstance(elem, str):
                         return None
-        return np.array(lst)
+        return numpy.array(lst)
 
     def from_tuple(self, tpl, *args):
         if args:
@@ -40,7 +40,7 @@ class NumPyCreator:
                 for elem in tpl:
                     if hasattr(elem, '__iter__') and not isinstance(elem, str):
                         return None
-        return np.array(tpl)
+        return numpy.array(tpl)
 
     def from_iterable(self, itr, *args):
         if args:
@@ -59,20 +59,20 @@ class NumPyCreator:
                 for elem in itr:
                     if hasattr(elem, '__iter__') and not isinstance(elem, str):
                         return None
-        return np.array(itr)
+        return numpy.array(itr)
 
     def from_shape(self, shape, value=0):
         if not isinstance(shape, tuple) or len(shape) != 2:
             return None
         matrix = [[value for x in range(shape[1])] for y in range(shape[0])]
-        return np.array(matrix)
+        return numpy.array(matrix)
 
     def random(self, shape):
         if not isinstance(shape, tuple) or len(shape) != 2:
             return None
         r, c = range(shape[0]), range(shape[1])
         matrix = [[random.random() for x in c] for y in r]
-        return np.array(matrix)
+        return numpy.array(matrix)
 
     def identity(self, n):
         if not isinstance(n, int):
